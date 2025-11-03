@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House Price Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 {
+      color: #333;
+    }
+    form {
+      background: white;
+      padding: 25px 35px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    input {
+      margin: 10px 0;
+      padding: 10px;
+      width: 80%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 25px;
+      background: #ff7f50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ff5a1f;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <h1>🏠 House Price Prediction</h1>
+  <form method="POST">
+    <input type="number" name="area" placeholder="Enter Area (sqft)" required><br>
+    <input type="number" name="bedrooms" placeholder="Enter No. of Bedrooms" required><br>
+    <input type="number" name="age" placeholder="Enter Age of House (years)" required><br>
+    <button type="submit">Predict Price</button>
+  </form>
+
+  {% if predicted_price %}
+    <div class="result">
+      💰 Predicted Price: {{ predicted_price }}
+    </div>
+  {% endif %}
+</body>
+</html>
